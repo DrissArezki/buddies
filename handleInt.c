@@ -50,7 +50,7 @@ void print_number(int n)
  * @f: pointer to the struct
  * Return: number of char
  */
-int handleInt(va_list form, flgs_t *f)
+int handleInt(va_list form, flags_t *f)
 {
 	int n = va_arg(form, int);
 	int res = count_digit(n);
@@ -69,12 +69,12 @@ int handleInt(va_list form, flgs_t *f)
 
 
 /**
- * get_flg - check flag
+ * get_flag - check flag
  * @s: char flag
  * @f: pointer to the struct
  * Return: 1 if flags , 0
  */
-int get_flg(char s, flgs_t *f)
+int get_flag(char s, flags_t *f)
 {
 	int i = 0;
 

@@ -9,7 +9,7 @@
  *		or NULL when not successful
  */
 
-int (*get_specifier(const char *format))(va_list,  flgs_t *) {
+int (*get_specifier(const char *format))(va_list,  flags_t *) {
 	int i;
 
 	specify_t arr[15] = {{"c", print_char}, {"s", print_string},
@@ -38,8 +38,8 @@ int (*get_specifier(const char *format))(va_list,  flgs_t *) {
 int _printf(const char *format, ...)
 {
 	register int len = 0;
-	int (*f)(va_list, flgs_t *);
-	flgs_t flgs = {0, 0, 0};
+	int (*f)(va_list, flags_t *);
+	flags_t flags = {0, 0, 0};
 
 	va_list form;
 
@@ -58,12 +58,12 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			while (get_flg(*format, &flgs))
+			while (get_flag(*format, &flags))
 				format++;
 			f = get_specifier(format);
 			if (f != NULL)
 			{
-				len += f(form, &flgs);
+				len += f(form, &flags);
 				format++;
 			}
 			else if (*format != '\0')

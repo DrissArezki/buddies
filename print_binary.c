@@ -8,7 +8,7 @@
  **
  ** Return: Number of digits (bits) printed
  */
-int print_binary(va_list form, flgs_t *f)
+int print_binary(va_list form, flags_t *f)
 {
 	int len = 0, i;
 	unsigned int num = va_arg(form, unsigned int);

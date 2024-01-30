@@ -21,7 +21,7 @@ int _putchar(char c)
  * Return: On success 1.
  * On error, -1 is returned, and errno is set.
  */
-int print_char(va_list form,  flgs_t *f)
+int print_char(va_list form,  flags_t *f)
 {
 	char c = va_arg(form, int);
 	(void)f;

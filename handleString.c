@@ -12,7 +12,7 @@
  *
  * Return: The number of characters printed.
  */
-int print_cent(va_list form, flgs_t *f)
+int print_cent(va_list form, flags_t *f)
 {
 	(void)form;
 	(void)f;
@@ -27,7 +27,7 @@ int print_cent(va_list form, flgs_t *f)
  *
  * Return: The number of characters printed.
  */
-int print_string(va_list form, flgs_t *f)
+int print_string(va_list form, flags_t *f)
 {
 	char buffer[BUFFER_SIZE];
 	int count = 0, i = 0;
@@ -66,7 +66,7 @@ int print_string(va_list form, flgs_t *f)
 * @f: argument
 * Return: number of char
 */
-int print_bigS(va_list form, flgs_t *f)
+int print_bigS(va_list form, flags_t *f)
 {
 	int i, count = 0;
 	char *s = va_arg(form, char *);

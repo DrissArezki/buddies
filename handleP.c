@@ -49,7 +49,7 @@ int _puts(char *str)
  * if a flag is passed to _printf
  * Return: number of char printed
  */
-int handleP(va_list form, flgs_t *f)
+int handleP(va_list form, flags_t *f)
 {
 	unsigned long int p = va_arg(form, unsigned long int);
 	char *str;
@@ -72,7 +72,7 @@ int handleP(va_list form, flgs_t *f)
  * Return: address of s
  */
 
-int rot13(va_list form, flgs_t *f)
+int rot13(va_list form, flags_t *f)
 {
 	int i, j;
 	char rot[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -102,7 +102,7 @@ int rot13(va_list form, flgs_t *f)
  * @f: argument
  * Return: length string
  */
-int print_rev(va_list form, flgs_t *f)
+int print_rev(va_list form, flags_t *f)
 {
 	int i = 0, j;
 	char *s = va_arg(form, char*);

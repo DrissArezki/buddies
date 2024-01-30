@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -10,7 +10,7 @@ include "main.h"
 **
 ** Return: Number of digits printed
 */
-int print_unsigned(va_list form,  flgs_t *f)
+int print_unsigned(va_list form,  flags_t *f)
 {
 	char buffer[20];
 	unsigned int num = va_arg(form, unsigned int);
@@ -28,7 +28,7 @@ int print_unsigned(va_list form,  flgs_t *f)
 **
 ** Return: Number of octal digits printed
 */
-int print_octal(va_list form, flgs_t *f)
+int print_octal(va_list form, flags_t *f)
 {
 	unsigned int num = va_arg(form, unsigned int);
 	char *str = convert(num, 8, 0);
@@ -47,7 +47,7 @@ int print_octal(va_list form, flgs_t *f)
 **
 ** Return: Number of hexadecimal digits printed
 */
-int print_hex(va_list form, flgs_t *f)
+int print_hex(va_list form, flags_t *f)
 {
 	unsigned int num = va_arg(form, unsigned int);
 	char *str = convert(num, 16, 1);
@@ -66,7 +66,7 @@ int print_hex(va_list form, flgs_t *f)
 **
 ** Return: Number of hexadecimal digits printed
 */
-int print_hex1(va_list form, flgs_t *f)
+int print_hex1(va_list form, flags_t *f)
 {
 	unsigned int num = va_arg(form, unsigned int);
 	char *str = convert(num, 16, 0);
